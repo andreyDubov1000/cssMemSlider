@@ -1,0 +1,194 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  background: white;
+  padding: 1vw;
+}
+.wrapper {
+  width: 95vw;
+  margin: 0 auto;
+  padding: 1vw;
+  background: black;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  margin: 2vw auto 3vw;
+  width: 90vw;
+  overflow: hidden;
+  background: black;
+}
+input[name='point'] {
+  display: none;
+}
+.slider-screen {
+  display: flex;
+
+  height: 100%;
+  width: 500%;
+  margin-bottom: 3vh;
+}
+.slides {
+  height: inherit;
+  width: 20%;
+
+  transition: all 0.2s ease;
+}
+.slides img {
+  height: 100%;
+  width: 100%;
+}
+
+.slide1 #t1 {
+  margin-left: -20%;
+}
+#slide1:checked ~ .slider-screen .slide1,
+#slide1:checked ~ footer .slider-text .text-box #t1 {
+  margin-left: 0;
+}
+#slide2:checked ~ .slider-screen .slide2,
+#slide2:checked ~ footer .slider-text .text-box #t2 {
+  margin-left: -20%;
+}
+#slide3:checked ~ .slider-screen .slide3,
+#slide3:checked ~ footer .slider-text .text-box #t3 {
+  margin-left: -40%;
+}
+#slide4:checked ~ .slider-screen .slide4,
+#slide4:checked ~ footer .slider-text .text-box #t4 {
+  margin-left: -60%;
+}
+#slide5:checked ~ .slider-screen .slide5,
+#slide5:checked ~ footer .slider-text .text-box #t5 {
+  margin-left: -80%;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: end;
+  align-items: center;
+  background: black;
+}
+
+.controls label {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 4vw;
+  width: 4vw;
+
+  margin-right: 0.4%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.controls label:last-child {
+  margin-right: 0;
+}
+
+.controls label:after {
+  display: flex;
+  background: turquoise;
+  content: '';
+
+  height: 40%;
+  width: 40%;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.controls label:hover::after {
+  border: 0.3vw solid white;
+  background: white;
+}
+
+#slide1:checked ~ footer .controls .label1::after,
+#slide2:checked ~ footer .controls .label2:after,
+#slide3:checked ~ footer .controls .label3::after,
+#slide4:checked ~ footer .controls .label4::after,
+#slide5:checked ~ footer .controls .label5::after {
+  border: 0.3vw solid turquoise;
+  background: black;
+}
+
+#slide1:checked ~ footer .controls .label1:hover::after,
+#slide2:checked ~ footer .controls .label2:hover::after,
+#slide3:checked ~ footer .controls .label3:hover::after,
+#slide4:checked ~ footer .controls .label4:hover::after,
+#slide5:checked ~ footer .controls .label5:hover::after {
+  border: 0.3vw solid white;
+  background: black;
+}
+
+.slider-text {
+  width: 60%;
+
+  color: white;
+  font-size: 2em;
+  overflow: hidden;
+}
+.text-box {
+  display: flex;
+  justify-content: start;
+  width: 500%;
+}
+.text-box p {
+  width: 20%;
+  background: black;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column-reverse;
+  }
+  .controls {
+    margin-bottom: 4vw;
+  }
+  .slider-text {
+    align-self: start;
+  }
+  .controls label {
+    height: 6vw;
+    width: 6vw;
+  }
+  .controls label:hover::after {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    transition: 0.2s all;
+  }
+}
