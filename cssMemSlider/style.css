@@ -19,6 +19,7 @@ body {
   padding: 1vw;
   background: black;
   border-radius: 15px;
+
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
   -o-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
@@ -39,6 +40,9 @@ section {
 input[name='point'] {
   display: none;
 }
+
+/* Main screen  */
+
 .slider-screen {
   display: flex;
   height: 100%;
@@ -83,6 +87,7 @@ input[name='point'] {
 #slide5:checked ~ footer .slider-text .text-box #t5 {
   margin-left: -80%;
 }
+/* Footer  */
 
 footer {
   display: flex;
@@ -107,8 +112,6 @@ footer {
   height: 4.5vw;
   width: 4.5vw;
 
-  /* margin-right: 0.4%; */
-
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
@@ -130,6 +133,7 @@ footer {
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
+
   -webkit-transition: all ease-in-out 0.3s;
   -moz-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
@@ -139,6 +143,32 @@ footer {
 .controls label:hover::after {
   border: 0.3vw solid white;
   background: white;
+}
+.slide1 #t1 {
+  margin-left: -20%;
+}
+
+/* Functionality  */
+
+#slide1:checked ~ .slider-screen .slide1,
+#slide1:checked ~ footer .slider-text .text-box #t1 {
+  margin-left: 0;
+}
+#slide2:checked ~ .slider-screen .slide2,
+#slide2:checked ~ footer .slider-text .text-box #t2 {
+  margin-left: -20%;
+}
+#slide3:checked ~ .slider-screen .slide3,
+#slide3:checked ~ footer .slider-text .text-box #t3 {
+  margin-left: -40%;
+}
+#slide4:checked ~ .slider-screen .slide4,
+#slide4:checked ~ footer .slider-text .text-box #t4 {
+  margin-left: -60%;
+}
+#slide5:checked ~ .slider-screen .slide5,
+#slide5:checked ~ footer .slider-text .text-box #t5 {
+  margin-left: -80%;
 }
 
 #slide1:checked ~ footer .controls .label1::after,
@@ -159,6 +189,8 @@ footer {
   background: black;
 }
 
+/* Text slider  */
+
 .slider-text {
   width: 60%;
 
@@ -177,6 +209,8 @@ footer {
   background: black;
   transition: all 0.2s ease;
 }
+
+/* Adaptability */
 
 @media (max-width: 1024px) {
   .controls label {
